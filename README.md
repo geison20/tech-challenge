@@ -1,6 +1,69 @@
-# Getting Started with Create React App
+# Code Challange
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Challenge Description
+
+The challenge is to create two different routes inside the application “/table” and “/user” where:
+
+"/table":
+
+- You should be able to create a table and present the data coming from the backend in realtime. Each new data that arrives must be inserted into the table.
+- The candidate must create a search input on the same page that will filter this information within the table.
+
+An example that you can use for guidance:
+
+<p>
+    <img src="public/wireframe_01.png"  alt="Main"/> 
+</p>
+
+"/user":
+
+- The candidate must create a card presenting the information of the user logged into the server.
+
+An example that you can use for guidance:
+
+<p>
+    <img src="public/wireframe_02.png"  alt="Profile"/>
+</p>
+
+### Must to have:
+
+- Use [Material-ui v5](https://mui.com/) for construct your components.
+
+- [React/hooks](https://reactjs.org/docs/hooks-intro.html)
+
+- On the day of the interview, have a project running on your machine to present.
+
+## Additional information
+
+The backend was built so you can use it as a data source, the client will be connected to the socket in real time. You will receive at an interval of 0 to 10 seconds a new request with financial data and you should use this information to build the table.
+
+JSON schema for market data:
+
+```json
+{
+  "account_name": "Personal Loan Account",
+  "amount": "890.86",
+  "credit_card_cvv": "248",
+  "credit_card_issuer": "maestro",
+  "credit_card_number": "6370-9605-9936-9733",
+  "currency_name": "Pataca",
+  "transaction_description": "payment transaction at Greenfelder",
+  "transaction_type": "withdrawal"
+}
+```
+
+JSON schema for client connected:
+
+```json
+{
+  "client_id": "irZP2T8dsRl1kpCnAAAB",
+  "first_name": "Otilia",
+  "job": "Forward Accounts Strategist",
+  "job_descriptor": "Regional"
+}
+```
 
 ## Available Scripts
 
@@ -11,60 +74,11 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `npm run server`
+
+Launches the realtime server for provide data.\
+Open [http://localhost:3003](http://localhost:3003) to get json response.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Launches the test runner in the interactive watch mode.
