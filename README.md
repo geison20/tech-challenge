@@ -27,7 +27,7 @@ An example that you can use for guidance:
     <img src="public/wireframe_02.png"  alt="Profile"/>
 </p>
 
-### Must to have:
+### Must have:
 - Use this boiler how to base of development
 
 - Use [Material-ui v5](https://mui.com/) for construct your components.
