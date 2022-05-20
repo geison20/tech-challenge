@@ -23,7 +23,7 @@ const App = () => {
   }, []);
 
   if (!client) {
-    return <Typography>There's no one client connected at moment</Typography>;
+    return <Typography>There's no client's connected at the moment.</Typography>;
   }
 
   return <Typography>Client Connected: {client?.first_name}</Typography>;
