@@ -34,7 +34,7 @@ An example that you can use for guidance:
 
 - [React/hooks](https://reactjs.org/docs/hooks-intro.html)
 
-- On the day of the interview, have a project running on your machine to present.
+- On the day of the interview you should have the project running on your local machine for a presentation.
 
 ## Additional information
 
