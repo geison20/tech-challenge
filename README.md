@@ -19,7 +19,7 @@ An example that you can use for guidance:
 
 "/user":
 
-- The candidate must create a card presenting the information of the user logged into the server.
+- The candidate must create a card presenting the information of the connected user into the server.
 
 An example that you can use for guidance:
 
