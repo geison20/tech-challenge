@@ -28,7 +28,7 @@ An example that you can use for guidance:
 </p>
 
 ### Must have:
-- Use this boiler how to base of development
+- use this repo as a boilerplate of your project 
 
 - Use [Material-ui v5](https://mui.com/) for construct your components.
 
