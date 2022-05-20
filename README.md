@@ -38,7 +38,9 @@ An example that you can use for guidance:
 
 ## Additional information
 
-The backend was built so you can use it as a data source, the client will be connected to the socket in real time. You will receive at an interval of 0 to 10 seconds a new request with financial data and you should use this information to build the table.
+- The backend is already built.
+- You can use it as a data source, the client will be connected to the socket in real time. 
+- You will receive in an interval of 0 and 10 seconds a new response with the financial data and you should use this information to build the table.
 
 JSON schema for market data:
 
