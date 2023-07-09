@@ -11,6 +11,7 @@ const App = () => {
 
   useEffect(() => {
     socketIo.current = io(ENDPOINT);
+    console.log('Hello')
 
     socketIo.current.on(
       "client-connected",
