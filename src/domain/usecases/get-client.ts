@@ -1,5 +1,6 @@
 import { Client } from "../models/client"
 
 export interface GetClient {
-  get(): Promise<Client>
+  get(callback: (e: any) => any): Promise<Client>
+  disconnect(): any
 }

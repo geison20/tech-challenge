@@ -4,21 +4,15 @@ import { SocketClient } from "../protocols/socket/socket-client";
 
 export class RemoteGetMarket implements GetMarket {
   constructor (
-    private readonly socketClient: SocketClient,
-    public market: Market,
+    private readonly socketClient: SocketClient
   ){}
+  
+  async get(callback: (e: any) => any): Promise<Market> {
+    return this.socketClient.on({ type: "market-data", callback })
+  }
 
-  async get(): Promise<Market> {
-    this.socketClient.on(
-      "market-data",
-      (data) => {
-        if(data) {
-          this.market = data
-        }
-      }
-    )
-
-    return this.market
+  disconnect() {
+    this.socketClient.disconnect()
   }
 
   filter(params: GetMarket.Params): Market {

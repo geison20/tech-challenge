@@ -1,7 +1,8 @@
 import { Market } from "../models/market"
 
 export interface GetMarket {
-  get(): Promise<Market>
+  get(callback: (e: any) => any): Promise<Market>
+  disconnect(): any
   filter(params: GetMarket.Params): Market
 }
 

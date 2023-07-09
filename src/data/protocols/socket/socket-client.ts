@@ -1,3 +1,11 @@
 export interface SocketClient {
-  on(type: string, callback: object)
+  on(params: SocketClient.Params): any
+  disconnect()
+}
+
+export namespace SocketClient  {
+  export type Params = {
+    type: string
+    callback: (data: any) => any
+  }
 }

@@ -4,21 +4,14 @@ import { SocketClient } from "../protocols/socket/socket-client";
 
 export class RemoteGetClient implements GetClient {
   constructor (
-    private readonly socketClient: SocketClient,
-    public client: Client,
+    private readonly socketClient: SocketClient
   ){}
 
-  async get(): Promise<Client> {
-    this.socketClient.on(
-      "client-connected",
-      (client) => {
-        if(client) {
-          this.client = client
-        }
-      }
-    )
-
-    return this.client
+  async get(callback: (e: any) => any): Promise<Client> {
+    return this.socketClient.on({ type: "client-connected", callback })
   }
 
+  disconnect() {
+    this.socketClient.disconnect()
+  }
 }
