@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import useFetch from "../../hooks/useFetch"
 import { GetUser } from "../../../domain/usecases/get-user"
 import { User } from "../../../domain/models/user"
+import UserCard from "./UserCard"
 
 type Props = {
   remote: GetUser
@@ -22,9 +23,12 @@ const UserPage: React.FC<Props> = ({ remote }) => {
 
     setUser(user)
   })
-  
-  console.log(user)
 
-  return <div>User</div>
+  if (!user) {
+    return <h1>Loading...</h1>
+  }
+  
+  return <UserCard user={user} />
 }
+
 export default UserPage
