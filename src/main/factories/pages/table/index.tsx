@@ -1,16 +1,11 @@
-import React, { useEffect } from "react"
+import React, { useRef } from "react"
 import { SocketIOClient } from "../../../../infra/socket/socket-io-client"
 import { RemoteGetMarket } from "../../../../data/usecases/remote-get-market"
+import MarketsTable from "../../../../presentation/pages/table"
 
 export const MarketFactory = () => {
-  const socketIOClient = new SocketIOClient()
-  const remoteGetMarket = new RemoteGetMarket(socketIOClient)
+  const socketIOClient = useRef(new SocketIOClient())
+  const remoteGetMarket = new RemoteGetMarket(socketIOClient.current)
 
-  useEffect(() => {
-    remoteGetMarket.get(data => console.log(data))
-    return () => remoteGetMarket.disconnect()
-  }, [])
-
-
-  return <div>USerFactory</div>
+  return <MarketsTable remote={remoteGetMarket}/>
 }

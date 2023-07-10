@@ -1,16 +1,11 @@
-import React, { useEffect } from "react"
-import { RemoteGetClient } from "../../../../data/usecases/remote-get-client"
+import React, { useRef } from "react"
+import { RemoteGetUser } from "../../../../data/usecases/remote-get-user"
 import { SocketIOClient } from "../../../../infra/socket/socket-io-client"
+import UserPage from "../../../../presentation/pages/user"
 
 export const UserFactory = () => {
-  const socketIOClient = new SocketIOClient()
-  const remoteGetClient = new RemoteGetClient(socketIOClient)
-
-  useEffect(() => {
-    remoteGetClient.get(data => console.log(data))
-    return () => remoteGetClient.disconnect()
-  }, [])
-
-
-  return <div>USerFactory</div>
+  const socketIOClient = useRef(new SocketIOClient())
+  const remoteGetClient = new RemoteGetUser(socketIOClient.current)
+  
+  return <UserPage remote={remoteGetClient}/>
 }

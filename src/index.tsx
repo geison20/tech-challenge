@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { UserFactory } from "./main/factories/pages/user";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./main/routes";
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 
-root.render(<UserFactory />)
+root.render(<RouterProvider router={router} />)

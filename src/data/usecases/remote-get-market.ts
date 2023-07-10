@@ -15,7 +15,7 @@ export class RemoteGetMarket implements GetMarket {
     this.socketClient.disconnect()
   }
 
-  filter(params: GetMarket.Params): Market {
+  filter(params: GetMarket.FilterParams): Market {
     return params.data[0]
   }
 }

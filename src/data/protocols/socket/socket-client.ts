@@ -1,6 +1,6 @@
 export interface SocketClient {
   on(params: SocketClient.Params): any
-  disconnect()
+  disconnect(): any
 }
 
 export namespace SocketClient  {
