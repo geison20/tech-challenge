@@ -18,29 +18,29 @@ const StyledTable: React.FC<Props> = ({ markets }) => (
       <TableHead>
         <TableRow>
           <TableCell>Account Name</TableCell>
-          <TableCell align="right">Amount</TableCell>
-          <TableCell align="right">Currency Name</TableCell>
-          <TableCell align="right">Transaction Type</TableCell>
-          <TableCell align="right">Transaction Description</TableCell>
-          <TableCell align="right">Credit Card Number</TableCell>
-          <TableCell align="right">Credit Card Issuer</TableCell>
-          <TableCell align="right">Credit Card CCV</TableCell>
+          <TableCell align="left">Amount</TableCell>
+          <TableCell align="left">Currency Name</TableCell>
+          <TableCell align="left">Transaction Type</TableCell>
+          <TableCell align="left">Transaction Description</TableCell>
+          <TableCell align="left">Credit Card Number</TableCell>
+          <TableCell align="left">Credit Card Issuer</TableCell>
+          <TableCell align="left">Credit Card CCV</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
-        {markets.map((row) => (
+        {markets.map((row, key) => (
           <TableRow
-            key={row.accountName}
+            key={key}
             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
           >
             <TableCell component="th" scope="row">{row.accountName}</TableCell>
-            <TableCell align="right">{row.amount}</TableCell>
-            <TableCell align="right">{row.currencyName}</TableCell>
-            <TableCell align="right">{row.trasactionType}</TableCell>
-            <TableCell align="right">{row.transactionDescription}</TableCell>
-            <TableCell align="right">{row.creditCardNumber}</TableCell>
-            <TableCell align="right">{row.creditCardIssuer}</TableCell>
-            <TableCell align="right">{row.creditCardCCV}</TableCell>
+            <TableCell align="left">{row.amount}</TableCell>
+            <TableCell align="left">{row.currencyName}</TableCell>
+            <TableCell align="left">{row.trasactionType}</TableCell>
+            <TableCell align="left">{row.transactionDescription}</TableCell>
+            <TableCell align="left">{row.creditCardNumber}</TableCell>
+            <TableCell align="left">{row.creditCardIssuer}</TableCell>
+            <TableCell align="left">{row.creditCardCCV}</TableCell>
           </TableRow>
         ))}
       </TableBody>

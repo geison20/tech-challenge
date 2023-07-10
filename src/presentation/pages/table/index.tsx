@@ -3,6 +3,7 @@ import { GetMarket } from "../../../domain/usecases/get-market"
 import useFetch from "../../hooks/useFetch"
 import { Market } from "../../../domain/models/market"
 import StyledTable from "./StyledTable";
+import StyledSearch from "./StyledSearch";
 
 type Props = {
   remote: GetMarket
@@ -10,6 +11,7 @@ type Props = {
 
 const MarketsPage: React.FC<Props> = ({ remote }) => {
   const [markets, setMarkets] = useState<Market[] | []>([])
+  const [filterMarkets, setFilterMarkets] = useState<Market[] | []>([])
 
   useFetch(remote, data => {
     // TODO: decouple this logic
@@ -37,12 +39,11 @@ const MarketsPage: React.FC<Props> = ({ remote }) => {
       setMarkets(prev => [...prev, market])
     }
   )
-  
-  console.log(markets)
 
   return (
     <div>
-      <StyledTable markets={markets} />
+      <StyledSearch markets={markets} onChange={(data) => setFilterMarkets(data)}/>
+      <StyledTable markets={filterMarkets.length ? filterMarkets : markets} />
     </div>
   )
 }
