@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { GetMarket } from "../../domain/usecases/get-market";
 import { GetUser } from "../../domain/usecases/get-user";
 
