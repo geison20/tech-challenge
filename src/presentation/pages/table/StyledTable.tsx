@@ -1,30 +1,41 @@
 import React from "react"
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { Market } from '../../../domain/models/market';
+import StyledTableCell from "./StyledTableCell";
 
 type Props = {
   markets: Market[] | []
 }
 
+const styles = {
+  container: {
+    backgroundColor: '#001e3e',
+    maxHeight: 640,
+    overflow: 'hidden'
+  },
+  table: {
+    minWidth: 650,
+  }
+}
+
 const StyledTable: React.FC<Props> = ({ markets }) => (
-  <TableContainer component={Paper}>
-    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+  <TableContainer sx={styles.container} component={Paper}>
+    <Table stickyHeader sx={styles.table} aria-label="simple table">
       <TableHead>
         <TableRow>
-          <TableCell>Account Name</TableCell>
-          <TableCell align="left">Amount</TableCell>
-          <TableCell align="left">Currency Name</TableCell>
-          <TableCell align="left">Transaction Type</TableCell>
-          <TableCell align="left">Transaction Description</TableCell>
-          <TableCell align="left">Credit Card Number</TableCell>
-          <TableCell align="left">Credit Card Issuer</TableCell>
-          <TableCell align="left">Credit Card CCV</TableCell>
+          <StyledTableCell >Account Name</StyledTableCell>
+          <StyledTableCell th align="left">Amount</StyledTableCell>
+          <StyledTableCell th align="left">Currency Name</StyledTableCell>
+          <StyledTableCell th align="left">Transaction Type</StyledTableCell>
+          <StyledTableCell th align="left">Transaction Description</StyledTableCell>
+          <StyledTableCell th align="left">Credit Card Number</StyledTableCell>
+          <StyledTableCell th align="left">Credit Card Issuer</StyledTableCell>
+          <StyledTableCell th align="left">Credit Card CCV</StyledTableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -33,14 +44,14 @@ const StyledTable: React.FC<Props> = ({ markets }) => (
             key={key}
             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
           >
-            <TableCell component="th" scope="row">{row.accountName}</TableCell>
-            <TableCell align="left">{row.amount}</TableCell>
-            <TableCell align="left">{row.currencyName}</TableCell>
-            <TableCell align="left">{row.trasactionType}</TableCell>
-            <TableCell align="left">{row.transactionDescription}</TableCell>
-            <TableCell align="left">{row.creditCardNumber}</TableCell>
-            <TableCell align="left">{row.creditCardIssuer}</TableCell>
-            <TableCell align="left">{row.creditCardCCV}</TableCell>
+            <StyledTableCell th component="th" scope="row">{row.accountName}</StyledTableCell>
+            <StyledTableCell align="left">{row.amount}</StyledTableCell>
+            <StyledTableCell align="left">{row.currencyName}</StyledTableCell>
+            <StyledTableCell align="left">{row.trasactionType}</StyledTableCell>
+            <StyledTableCell align="left">{row.transactionDescription}</StyledTableCell>
+            <StyledTableCell align="left">{row.creditCardNumber}</StyledTableCell>
+            <StyledTableCell align="left">{row.creditCardIssuer}</StyledTableCell>
+            <StyledTableCell align="left">{row.creditCardCCV}</StyledTableCell>
           </TableRow>
         ))}
       </TableBody>

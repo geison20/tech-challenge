@@ -9,6 +9,11 @@ type Props = {
   remote: GetMarket
 }
 
+const styles = {
+  backgroundColor: '#001e3e',
+  padding: 32
+}
+
 const MarketsPage: React.FC<Props> = ({ remote }) => {
   const [markets, setMarkets] = useState<Market[] | []>([])
   const [filterMarkets, setFilterMarkets] = useState<Market[] | []>([])
@@ -41,7 +46,7 @@ const MarketsPage: React.FC<Props> = ({ remote }) => {
   )
 
   return (
-    <div>
+    <div style={styles}>
       <StyledSearch markets={markets} onChange={(data) => setFilterMarkets(data)}/>
       <StyledTable markets={filterMarkets.length ? filterMarkets : markets} />
     </div>
