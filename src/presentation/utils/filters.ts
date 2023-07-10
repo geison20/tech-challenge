@@ -1,8 +1,3 @@
-export const termFilter = (arr: any[] | [], term: string) => {
-    return arr.filter(arr => {
-      const values = Object.values(arr)
-      const hasSome = values.some((field: any) =>
-        field.toString().toLowerCase().includes(term.toLowerCase()))
-      return hasSome
-  })
+export const termFilter = (arr: any[] | [], term: string, field: string) => {
+  return arr.filter(el => el[field].toLowerCase().includes(term.toLowerCase()))
 }

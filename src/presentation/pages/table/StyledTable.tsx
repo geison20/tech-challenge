@@ -15,8 +15,7 @@ type Props = {
 const styles = {
   container: {
     backgroundColor: '#001e3e',
-    maxHeight: 640,
-    overflow: 'hidden'
+    maxHeight: 440,
   },
   table: {
     minWidth: 650,
